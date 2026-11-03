@@ -17,10 +17,11 @@ export function Hero() {
           src="/hero/home-hero.jpg"
           alt=""
           fill
-          className="object-cover object-center opacity-50"
+          className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/95 via-navy-deep/85 to-navy-deep/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/90 via-navy-deep/80 to-navy-deep/88" />
+        <div className="absolute inset-0 bg-navy-deep/35" />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-30" aria-hidden="true" />
       <div

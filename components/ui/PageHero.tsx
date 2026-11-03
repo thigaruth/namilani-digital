@@ -35,19 +35,20 @@ export function PageHero({
           src={image}
           alt=""
           fill
-          className="object-cover object-center opacity-60"
+          className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/90 via-navy-deep/80 to-navy-deep/95" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/85 via-navy-deep/75 to-navy-deep/90" />
+        <div className="absolute inset-0 bg-navy-deep/40" />
       </div>
       
-      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-30" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-25" aria-hidden="true" />
       <div
-        className="pointer-events-none absolute -right-24 top-12 size-[26rem] rounded-full bg-coral/25 blur-[120px] animate-pulse"
+        className="pointer-events-none absolute -right-24 top-12 size-[26rem] rounded-full bg-coral/30 blur-[120px] animate-pulse"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -left-24 bottom-0 size-[24rem] rounded-full bg-teal/20 blur-[120px] animate-pulse"
+        className="pointer-events-none absolute -left-24 bottom-0 size-[24rem] rounded-full bg-teal/25 blur-[120px] animate-pulse"
         aria-hidden="true"
         style={{ animationDelay: '1s' }}
       />
