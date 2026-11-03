@@ -19,6 +19,7 @@ export default function TermsPage() {
         title="Terms of Service"
         description="The general terms that apply when you use the Namilani Digital website or engage us to discuss a project."
         breadcrumbs={[{ label: "Terms of Service" }]}
+        image="/hero/about-hero.jpg"
       />
 
       <section className="bg-white py-16 md:py-24">

@@ -24,6 +24,7 @@ export default function PortfolioPage() {
         title="Good Ideas Deserve Great Digital Execution."
         description="Explore selected digital projects that demonstrate how thoughtful design, functional development, and clear communication can help businesses present themselves online."
         breadcrumbs={[{ label: "Our Work" }]}
+        image="/portfolio-hero/portfolio.jpg"
       >
         <Button href="/contact" variant="primary" size="lg" arrow>
           Have a Similar Project in Mind?

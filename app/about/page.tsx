@@ -72,6 +72,7 @@ export default function AboutPage() {
         title="We're Here to Help Your Business Make Its Mark Online."
         description="Namilani Digital exists to help businesses turn digital opportunities into meaningful progress through thoughtful design, practical technology, and strategic digital marketing."
         breadcrumbs={[{ label: "About" }]}
+        image="/hero/about-hero.jpg"
       >
         <div className="flex flex-wrap gap-2">
           {["Build", "Grow", "Connect"].map((word, index) => (

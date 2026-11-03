@@ -1,6 +1,7 @@
 "use client";
 
 import { m } from "motion/react";
+import Image from "next/image";
 import { Check, Search, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -11,7 +12,17 @@ import { homeServiceLine } from "@/lib/services";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-deep pb-10 pt-28 text-white md:pb-14 md:pt-36">
-      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-40" aria-hidden="true" />
+      <div className="absolute inset-0">
+        <Image
+          src="/hero/home-hero.jpg"
+          alt=""
+          fill
+          className="object-cover object-center opacity-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/95 via-navy-deep/85 to-navy-deep/90" />
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-30" aria-hidden="true" />
       <div
         className="pointer-events-none absolute -right-24 top-10 size-[30rem] rounded-full bg-coral/20 blur-[120px]"
         aria-hidden="true"

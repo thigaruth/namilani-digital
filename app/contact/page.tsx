@@ -33,6 +33,7 @@ export default function ContactPage() {
         title="Let's Talk About Your Next Digital Project."
         description="Whether you need a new website, better search visibility, a stronger social media presence, or a complete digital foundation, we'd love to hear what you're planning."
         breadcrumbs={[{ label: "Contact" }]}
+        image="/hero/contact-hero.jpg"
       >
         <div className="flex flex-wrap gap-3">
           <Button

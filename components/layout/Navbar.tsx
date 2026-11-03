@@ -58,7 +58,9 @@ export function Navbar() {
       >
         <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-10">
           <Link href="/" aria-label="Namilani Digital home" className="shrink-0">
-            <Logo priority size="md" />
+            <div className="rounded-lg bg-white/95 p-1 shadow-lg">
+              <Logo priority size="md" />
+            </div>
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">

@@ -36,6 +36,7 @@ export default function ServicesPage() {
         title="Digital Services Designed Around Your Business."
         description="From your first website to a more established digital marketing strategy, Namilani Digital provides connected solutions to help your business build credibility, improve visibility, and grow online."
         breadcrumbs={[{ label: "Services" }]}
+        image="/hero/services-hero.jpg"
       >
         <Button href="/contact" variant="primary" size="lg" arrow>
           Discuss Your Project

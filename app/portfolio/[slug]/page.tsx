@@ -71,6 +71,7 @@ export default async function ProjectPage({
           { label: "Our Work", href: "/portfolio" },
           { label: project.name },
         ]}
+        image="/portfolio-hero/portfolio.jpg"
       >
         <div className="flex flex-wrap items-center gap-2">
           <Badge tone="light">Preview project</Badge>

@@ -19,7 +19,7 @@ export function Logo({
   return (
     <span
       className={cn(
-        "inline-flex items-center justify-center rounded-xl bg-white p-1 shadow-sm ring-1 ring-navy/5",
+        "inline-flex items-center justify-center",
         heights[size],
         className,
       )}
@@ -30,7 +30,7 @@ export function Logo({
         width={1536}
         height={1024}
         priority={priority}
-        className="h-full w-auto rounded-lg object-contain"
+        className="h-full w-auto object-contain"
         sizes="(max-width: 640px) 90px, 120px"
       />
     </span>

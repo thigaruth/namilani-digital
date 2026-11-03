@@ -19,6 +19,7 @@ export default function PrivacyPolicyPage() {
         title="Privacy Policy"
         description="How Namilani Digital handles the information you share with us through this website and our enquiry form."
         breadcrumbs={[{ label: "Privacy Policy" }]}
+        image="/hero/about-hero.jpg"
       />
 
       <section className="bg-white py-16 md:py-24">

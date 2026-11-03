@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Check, Info, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -21,6 +22,14 @@ const processHeadings: Record<string, string> = {
   hosting: "How We Work",
 };
 
+const serviceHeroImages: Record<string, string> = {
+  "web-design": "/service-hero/web-design.jpg",
+  seo: "/service-hero/seo.jpg",
+  "social-media": "/service-hero/social-media.jpg",
+  "graphic-design": "/service-hero/graphic-design.jpg",
+  hosting: "/service-hero/hosting.jpg",
+};
+
 export function ServiceDetail({ service }: { service: Service }) {
   const styles = accentStyles[service.accent];
   const processHeading = processHeadings[service.slug] ?? "Our Process";
@@ -33,6 +42,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         title={service.heroTitle}
         description={service.heroDescription}
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: service.name }]}
+        image={serviceHeroImages[service.slug] || "/hero/services-hero.jpg"}
       >
         <div className="flex flex-wrap items-center gap-3">
           <span className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] ${styles.solid}`}>
