@@ -1,4 +1,5 @@
-import { Info } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Info } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,6 +13,8 @@ const pricing = [
     note: "The final price depends on the number of pages, complexity, integrations, and requested features.",
     accent: "coral" as const,
     featured: true,
+    image: "/service-hero/web-design.jpg",
+    href: "/services/web-design",
   },
   {
     label: "SEO Services",
@@ -19,6 +22,8 @@ const pricing = [
     note: "Quoted according to the agreed deliverables and reporting arrangements.",
     accent: "teal" as const,
     featured: false,
+    image: "/service-hero/seo.jpg",
+    href: "/services/seo",
   },
   {
     label: "Web Hosting",
@@ -26,6 +31,8 @@ const pricing = [
     note: "Billing periods and hosting specifications are confirmed in the selected package.",
     accent: "orange" as const,
     featured: false,
+    image: "/service-hero/hosting.jpg",
+    href: "/services/hosting",
   },
   {
     label: "Social Media Management",
@@ -33,6 +40,8 @@ const pricing = [
     note: "Excluding advertising spend. Scope and inclusions are confirmed in your quotation.",
     accent: "coral" as const,
     featured: false,
+    image: "/service-hero/social-media.jpg",
+    href: "/services/social-media",
   },
   {
     label: "Social Media Graphics",
@@ -40,6 +49,8 @@ const pricing = [
     note: "A practical starting package for branded social media creative.",
     accent: "teal" as const,
     featured: false,
+    image: "/service-hero/graphic-design.jpg",
+    href: "/services/graphic-design",
   },
 ];
 
@@ -63,7 +74,7 @@ export function PricingOverview() {
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {pricing.map((item) => (
+          {pricing.map((item, index) => (
             <AnimatedSection key={item.label}>
               <PricingCard
                 label={item.label}
@@ -71,9 +82,41 @@ export function PricingOverview() {
                 note={item.note}
                 accent={item.accent}
                 featured={item.featured}
+                index={String(index + 1).padStart(2, "0")}
+                image={item.image}
+                href={item.href}
               />
             </AnimatedSection>
           ))}
+
+          <AnimatedSection>
+            <div className="flex h-full flex-col justify-between border border-coral bg-coral p-6 text-ink sm:p-7">
+              <div>
+                <div className="flex items-start justify-between gap-4">
+                  <p className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-ink/55">
+                    Custom project
+                  </p>
+                  <span className="inline-flex size-9 shrink-0 items-center justify-center border border-ink/25">
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </span>
+                </div>
+                <p className="mt-6 font-display text-[2rem] font-semibold leading-[0.95] tracking-[-0.02em]">
+                  Need a mix?
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">
+                  Combine services or scope something specific around your goals, timeline, and
+                  budget.
+                </p>
+              </div>
+              <Link
+                href="/contact"
+                className="mt-8 inline-flex items-center gap-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-ink/75 transition-colors hover:text-ink"
+              >
+                Request a custom quote
+                <ArrowUpRight className="size-3.5" aria-hidden="true" />
+              </Link>
+            </div>
+          </AnimatedSection>
         </div>
 
         <div className="mt-8 flex items-start gap-3 border-l-2 border-teal/50 bg-paper/60 p-4 text-xs leading-relaxed text-muted">

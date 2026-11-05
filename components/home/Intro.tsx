@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Blocks, Link2, TrendingUp } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -39,7 +40,28 @@ export function Intro() {
             <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.06] tracking-[-0.015em] text-forest">
               We make digital work for <span className="italic text-coral-ink">your</span> business.
             </h2>
-            <div className="mt-8">
+            <div className="relative mt-7 aspect-[5/2] overflow-hidden border border-ink/12 bg-paper-deep">
+              <Image
+                src="/hero/about-hero.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 420px"
+                className="object-cover object-center"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-deep/65 via-forest-deep/5 to-transparent"
+                aria-hidden="true"
+              />
+              <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-4">
+                <span className="text-[0.5625rem] font-semibold uppercase tracking-[0.2em] text-paper/75">
+                  Namilani Digital
+                </span>
+                <span className="text-[0.5625rem] font-semibold uppercase tracking-[0.2em] text-paper/60">
+                  Build. Grow. Connect.
+                </span>
+              </div>
+            </div>
+            <div className="mt-6">
               <Button href="/about" variant="outline" size="md" arrow>
                 Discover Namilani Digital
               </Button>

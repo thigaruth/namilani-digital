@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -59,6 +60,22 @@ export function ContactCTA({
               </div>
 
               <div className="border-t border-paper/15 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                <div className="relative mb-6 aspect-[16/9] overflow-hidden border border-paper/15 bg-forest">
+                  <Image
+                    src="/hero/contact-hero.jpg"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 320px"
+                    className="object-cover object-center"
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/5 to-transparent"
+                    aria-hidden="true"
+                  />
+                  <p className="absolute bottom-3.5 left-4 text-[0.5625rem] font-semibold uppercase tracking-[0.2em] text-paper/75">
+                    Let&apos;s talk
+                  </p>
+                </div>
                 <p className="text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-paper/40">
                   Prefer to reach out directly?
                 </p>
