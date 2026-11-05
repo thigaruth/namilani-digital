@@ -16,9 +16,10 @@ import { mailtoHref, whatsappMessageHref } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const inputClass =
-  "w-full rounded-xl border border-navy/12 bg-white px-3.5 py-3 text-sm text-navy outline-none transition-colors placeholder:text-navy/30 focus:border-teal focus:ring-4 focus:ring-teal/15 aria-[invalid=true]:border-coral-ink";
+  "w-full border border-ink/15 bg-paper px-3.5 py-3 text-sm text-forest outline-none transition-colors placeholder:text-forest/30 focus:border-teal focus:ring-2 focus:ring-teal/15 aria-[invalid=true]:border-coral-ink";
 
-const labelClass = "mb-1.5 block text-xs font-semibold text-navy";
+const labelClass =
+  "mb-1.5 block text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-forest/70";
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
@@ -105,11 +106,11 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-3xl border border-teal/25 bg-white p-7 shadow-soft sm:p-9">
-        <span className="inline-flex size-14 items-center justify-center rounded-full bg-teal/15 text-teal-ink">
+      <div className="border border-ink/12 bg-paper p-7 sm:p-9">
+        <span className="inline-flex size-14 items-center justify-center border border-teal/30 bg-teal/10 text-teal-ink">
           <Check className="size-7" strokeWidth={2.5} aria-hidden="true" />
         </span>
-        <h2 className="mt-6 font-display text-2xl font-extrabold tracking-[-0.035em] text-navy">
+        <h2 className="mt-6 font-display text-2xl font-semibold tracking-[-0.015em] text-forest">
           Your enquiry has been sent.
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -120,7 +121,7 @@ export function ContactForm() {
           <button
             type="button"
             onClick={() => setStatus("idle")}
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-navy px-5 text-sm font-semibold text-white transition hover:bg-navy-deep"
+            className="inline-flex min-h-11 items-center justify-center bg-forest px-5 text-sm font-semibold text-paper transition hover:bg-forest-deep"
           >
             Send another enquiry
           </button>
@@ -128,7 +129,7 @@ export function ContactForm() {
             href={whatsappMessageHref()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-navy/15 px-5 text-sm font-semibold text-navy transition hover:border-navy/30"
+            className="inline-flex min-h-11 items-center justify-center border border-ink/20 px-5 text-sm font-semibold text-forest transition hover:border-ink/40"
           >
             Message us on WhatsApp
           </a>
@@ -141,10 +142,10 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="rounded-3xl border border-navy/8 bg-white p-5 shadow-soft sm:p-7 lg:p-8"
+      className="border border-ink/12 bg-paper p-5 sm:p-7 lg:p-8"
     >
       <div className="mb-6">
-        <h2 className="font-display text-xl font-extrabold tracking-[-0.03em] text-navy">
+        <h2 className="font-display text-xl font-semibold tracking-[-0.015em] text-forest">
           Tell us about your project
         </h2>
         <p className="mt-1.5 text-xs leading-relaxed text-muted">
@@ -155,13 +156,13 @@ export function ContactForm() {
       {status === "error" && serverMessage ? (
         <div
           role="alert"
-          className="mb-5 rounded-2xl border border-coral-ink/25 bg-coral/10 p-4 text-xs leading-relaxed text-navy"
+          className="mb-5 border border-coral-ink/25 bg-coral/10 p-4 text-xs leading-relaxed text-forest"
         >
           <p className="flex items-start gap-2 font-medium">
             <AlertCircle className="mt-0.5 size-4 shrink-0 text-coral-ink" aria-hidden="true" />
             {serverMessage}
           </p>
-          <p className="mt-2 pl-6 text-navy/60">
+          <p className="mt-2 pl-6 text-forest/60">
             You can also email{" "}
             <a href={mailtoHref} className="font-semibold text-teal-ink underline underline-offset-2">
               info@namilanidigital.com
@@ -351,7 +352,7 @@ export function ContactForm() {
           <input
             id="consent"
             type="checkbox"
-            className="mt-0.5 size-4 shrink-0 rounded border-navy/25 accent-teal"
+            className="mt-0.5 size-4 shrink-0 border-ink/25 accent-teal"
             aria-invalid={Boolean(errors.consent)}
             aria-describedby={errors.consent ? "consent-error" : undefined}
             {...register("consent")}
@@ -371,7 +372,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="group mt-6 inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-full bg-coral px-6 text-sm font-bold text-ink shadow-[0_14px_35px_-18px_rgba(249,126,145,0.9)] transition-all hover:bg-coral-strong active:scale-[0.99] disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
+        className="group mt-6 inline-flex min-h-13 w-full items-center justify-center gap-2 bg-coral px-6 text-sm font-semibold text-ink transition-colors hover:bg-coral-strong disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? (
           <>

@@ -53,13 +53,13 @@ export default function ContactPage() {
         </div>
       </PageHero>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper py-20 md:py-28">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
             <div>
               <AnimatedSection>
                 <Eyebrow>Contact details</Eyebrow>
-                <h2 className="mt-4 font-display text-3xl font-extrabold tracking-[-0.04em] text-navy sm:text-4xl">
+                <h2 className="mt-4 font-display text-[clamp(2rem,3.5vw,3rem)] font-semibold tracking-[-0.015em] text-forest">
                   Reach us directly.
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -71,14 +71,14 @@ export default function ContactPage() {
                   <SiteContact />
                 </div>
 
-                <div className="mt-8 rounded-3xl border border-navy/8 bg-mist p-5 sm:p-6">
-                  <p className="text-[0.625rem] font-bold uppercase tracking-[0.16em] text-muted">
+                <div className="mt-8 border border-ink/12 bg-paper-deep/40 p-5 sm:p-6">
+                  <p className="text-[0.5625rem] font-semibold uppercase tracking-[0.18em] text-muted">
                     Helpful details to include
                   </p>
                   <ul className="mt-4 space-y-2.5">
                     {helpfulDetails.map((detail) => (
                       <li key={detail} className="flex items-start gap-2.5 text-xs leading-relaxed text-muted">
-                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-teal" aria-hidden="true" />
+                        <span className="mt-[0.4rem] size-1.5 shrink-0 bg-coral" aria-hidden="true" />
                         {detail}
                       </li>
                     ))}
@@ -88,25 +88,25 @@ export default function ContactPage() {
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <a
                     href={telHref}
-                    className="group flex flex-1 items-center justify-between rounded-2xl border border-navy/8 bg-white p-4 transition-colors hover:border-teal/40 hover:bg-teal/5"
+                    className="group flex flex-1 items-center justify-between border border-ink/12 bg-paper p-4 transition-colors hover:border-ink/25"
                   >
                     <span className="flex items-center gap-3">
                       <Phone className="size-4 text-teal-ink" aria-hidden="true" />
-                      <span className="text-sm font-semibold text-navy">{site.phoneDisplay}</span>
+                      <span className="text-sm font-semibold text-forest">{site.phoneDisplay}</span>
                     </span>
-                    <ArrowUpRight className="size-4 text-navy/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                    <ArrowUpRight className="size-4 text-forest/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                   </a>
                   <a
                     href={whatsappMessageHref()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-1 items-center justify-between rounded-2xl border border-navy/8 bg-white p-4 transition-colors hover:border-teal/40 hover:bg-teal/5"
+                    className="group flex flex-1 items-center justify-between border border-ink/12 bg-paper p-4 transition-colors hover:border-ink/25"
                   >
                     <span className="flex items-center gap-3">
                       <MessageCircle className="size-4 text-teal-ink" aria-hidden="true" />
-                      <span className="text-sm font-semibold text-navy">WhatsApp</span>
+                      <span className="text-sm font-semibold text-forest">WhatsApp</span>
                     </span>
-                    <ArrowUpRight className="size-4 text-navy/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                    <ArrowUpRight className="size-4 text-forest/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                   </a>
                 </div>
               </AnimatedSection>

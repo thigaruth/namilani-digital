@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
-import { StaggerGroup, StaggerItem } from "@/components/animations/StaggerGroup";
 import { accentStyles } from "@/lib/accents";
 
 const pillars = [
@@ -32,24 +31,27 @@ const pillars = [
 
 export function Intro() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28">
+    <section className="relative overflow-hidden bg-paper py-20 md:py-28">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <AnimatedSection>
             <Eyebrow>Who we are</Eyebrow>
-            <h2 className="mt-5 font-display text-[clamp(2.1rem,4.2vw,3.5rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-navy">
-              We Make Digital Work for Your Business.
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.06] tracking-[-0.015em] text-forest">
+              We make digital work for <span className="italic text-coral-ink">your</span> business.
             </h2>
-            <div className="mt-7">
+            <div className="mt-8">
               <Button href="/about" variant="outline" size="md" arrow>
                 Discover Namilani Digital
               </Button>
             </div>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.1}>
-            <div className="space-y-4 text-base leading-relaxed text-muted sm:text-lg">
-              <p className="font-medium text-navy">Having a digital presence is just the beginning.</p>
+          <AnimatedSection delay={0.08}>
+            <p className="max-w-xl font-display text-2xl font-medium italic leading-snug tracking-[-0.01em] text-forest sm:text-[1.75rem]">
+              Having a digital presence is just the beginning.
+            </p>
+
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted sm:text-[1.0625rem]">
               <p>
                 Your website needs to communicate your value, your brand needs to stand out, and
                 your marketing needs to reach the right people.
@@ -65,27 +67,31 @@ export function Intro() {
               </p>
             </div>
 
-            <StaggerGroup className="mt-9 grid gap-3 sm:grid-cols-3">
-              {pillars.map((pillar) => {
+            <div className="mt-10 grid gap-0 border-t border-ink/12 sm:grid-cols-3">
+              {pillars.map((pillar, index) => {
                 const Icon = pillar.icon;
                 const styles = accentStyles[pillar.accent];
                 return (
-                  <StaggerItem key={pillar.title}>
-                    <div className="h-full rounded-2xl border border-navy/8 bg-mist/70 p-4">
-                      <span className={`inline-flex size-9 items-center justify-center rounded-xl ${styles.soft} ${styles.text}`}>
-                        <Icon className="size-4" strokeWidth={2} aria-hidden="true" />
+                  <div
+                    key={pillar.title}
+                    className="border-b border-ink/12 py-5 sm:border-b-0 sm:border-r sm:px-5 sm:py-6 sm:last:border-r-0 sm:first:pl-0"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <Icon className={`size-4 ${styles.text}`} strokeWidth={1.8} aria-hidden="true" />
+                      <span className="text-[0.5625rem] font-medium tracking-[0.18em] text-muted/60">
+                        {String(index + 1).padStart(2, "0")}
                       </span>
-                      <p className="mt-3 font-display text-base font-bold tracking-[-0.02em] text-navy">
-                        {pillar.title}
-                      </p>
-                      <p className="mt-1.5 text-xs leading-relaxed text-muted">
-                        {pillar.description}
-                      </p>
                     </div>
-                  </StaggerItem>
+                    <p className="mt-3 font-display text-lg font-semibold tracking-[-0.01em] text-forest">
+                      {pillar.title}
+                    </p>
+                    <p className="mt-1.5 text-xs leading-relaxed text-muted">
+                      {pillar.description}
+                    </p>
+                  </div>
                 );
               })}
-            </StaggerGroup>
+            </div>
           </AnimatedSection>
         </div>
       </Container>

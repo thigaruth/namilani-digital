@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -17,9 +17,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -89,8 +89,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F8FAFC" },
-    { media: "(prefers-color-scheme: dark)", color: "#17243A" },
+    { media: "(prefers-color-scheme: light)", color: "#F7F2E9" },
+    { media: "(prefers-color-scheme: dark)", color: "#072825" },
   ],
   colorScheme: "light",
 };
@@ -135,8 +135,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-KE" className={`${inter.variable} ${jakarta.variable}`}>
-      <body className="min-h-screen bg-white font-sans text-ink antialiased">
+    <html lang="en-KE" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="min-h-screen bg-paper font-sans text-ink antialiased">
         <JsonLd data={[organizationSchema, websiteSchema]} />
         <MotionProvider>
           <SkipLink />

@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
-import { StaggerGroup, StaggerItem } from "@/components/animations/StaggerGroup";
 import { accentStyles } from "@/lib/accents";
 
 const reasons = [
@@ -39,13 +38,13 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-paper py-20 md:py-28">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <AnimatedSection className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow>Why Namilani</Eyebrow>
-            <h2 className="mt-5 font-display text-[clamp(2.1rem,4.2vw,3.5rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-navy">
-              Digital Solutions With Your Goals at the Centre.
+            <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.06] tracking-[-0.015em] text-forest">
+              Digital solutions with your goals at the <span className="italic text-teal-ink">centre</span>.
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted">
               We combine practical thinking, creative execution, and a clear understanding of your
@@ -58,32 +57,35 @@ export function WhyChooseUs() {
             </div>
           </AnimatedSection>
 
-          <StaggerGroup className="grid gap-4 sm:grid-cols-2">
-            {reasons.map((reason, index) => {
-              const Icon = reason.icon;
-              const styles = accentStyles[reason.accent];
-              return (
-                <StaggerItem key={reason.title}>
-                  <div className="group h-full rounded-3xl border border-navy/8 bg-mist/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-navy/15 hover:bg-white hover:shadow-soft sm:p-7">
-                    <div className="flex items-start justify-between">
-                      <span className={`inline-flex size-11 items-center justify-center rounded-2xl ${styles.soft} ${styles.text}`}>
-                        <Icon className="size-5" strokeWidth={1.9} aria-hidden="true" />
-                      </span>
-                      <span className="font-display text-xs font-bold tracking-[0.16em] text-navy/20">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+          <AnimatedSection delay={0.08}>
+            <ol className="border-t border-ink/12">
+              {reasons.map((reason, index) => {
+                const Icon = reason.icon;
+                const styles = accentStyles[reason.accent];
+                return (
+                  <li
+                    key={reason.title}
+                    className="grid gap-3 border-b border-ink/12 py-6 sm:grid-cols-[2.5rem_1fr] sm:gap-5"
+                  >
+                    <span className="font-display text-sm text-muted/70">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-2.5">
+                        <Icon className={`size-4 ${styles.text}`} strokeWidth={1.8} aria-hidden="true" />
+                        <h3 className="font-display text-xl font-semibold tracking-[-0.01em] text-forest sm:text-[1.35rem]">
+                          {reason.title}
+                        </h3>
+                      </div>
+                      <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+                        {reason.description}
+                      </p>
                     </div>
-                    <h3 className="mt-5 font-display text-lg font-bold leading-tight tracking-[-0.025em] text-navy">
-                      {reason.title}
-                    </h3>
-                    <p className="mt-2.5 text-sm leading-relaxed text-muted">
-                      {reason.description}
-                    </p>
-                  </div>
-                </StaggerItem>
-              );
-            })}
-          </StaggerGroup>
+                  </li>
+                );
+              })}
+            </ol>
+          </AnimatedSection>
         </div>
       </Container>
     </section>

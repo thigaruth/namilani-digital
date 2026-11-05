@@ -39,8 +39,8 @@ export function TextReveal({
                   viewport: { once, amount: 0.4 },
                 })}
             transition={{
-              duration: 0.75,
-              delay: delay + index * 0.045,
+              duration: 0.7,
+              delay: delay + index * 0.035,
               ease: [0.22, 1, 0.36, 1],
             }}
           >

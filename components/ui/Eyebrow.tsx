@@ -12,12 +12,12 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2.5 text-[0.6875rem] font-bold uppercase tracking-[0.22em]",
-        tone === "dark" ? "text-white/65" : "text-muted",
+        "inline-flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.24em]",
+        tone === "dark" ? "text-paper/60" : "text-muted",
         className,
       )}
     >
-      <span className="size-1.5 rounded-full bg-teal" aria-hidden="true" />
+      <span className="h-px w-7 bg-coral" aria-hidden="true" />
       {children}
     </span>
   );

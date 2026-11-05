@@ -22,7 +22,7 @@ export default function TermsPage() {
         image="/hero/about-hero.jpg"
       />
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-paper py-16 md:py-24">
         <Container>
           <div className="mx-auto max-w-3xl">
             <p className="mb-10 text-xs font-semibold uppercase tracking-[0.14em] text-muted">

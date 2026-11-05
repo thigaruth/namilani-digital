@@ -26,17 +26,17 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
         }}
       />
       <nav aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1.5 text-xs font-medium text-white/50">
+        <ol className="flex flex-wrap items-center gap-1.5 text-[0.6875rem] uppercase tracking-[0.14em] text-paper/45">
           {all.map((item, index) => {
             const last = index === all.length - 1;
             return (
               <li key={`${item.label}-${index}`} className="flex items-center gap-1.5">
                 {item.href && !last ? (
-                  <Link href={item.href} className="transition-colors hover:text-white">
+                  <Link href={item.href} className="transition-colors hover:text-paper">
                     {item.label}
                   </Link>
                 ) : (
-                  <span className={last ? "text-white/85" : undefined} aria-current={last ? "page" : undefined}>
+                  <span className={last ? "text-paper/80" : undefined} aria-current={last ? "page" : undefined}>
                     {item.label}
                   </span>
                 )}

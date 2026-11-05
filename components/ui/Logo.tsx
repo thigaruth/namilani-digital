@@ -11,8 +11,8 @@ export function Logo({
   size?: "sm" | "md" | "lg";
 }) {
   const heights = {
-    sm: "h-10",
-    md: "h-12 sm:h-14",
+    sm: "h-9",
+    md: "h-11 sm:h-12",
     lg: "h-16 sm:h-20",
   } as const;
 
@@ -25,7 +25,7 @@ export function Logo({
       )}
     >
       <Image
-        src="/logo/namilani-logo.png"
+        src="/logo/namilani-logo-transparent.png"
         alt="Namilani Digital"
         width={1536}
         height={1024}

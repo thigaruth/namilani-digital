@@ -31,7 +31,7 @@ export default function PortfolioPage() {
         </Button>
       </PageHero>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper py-20 md:py-28">
         <Container>
           <AnimatedSection>
             <SectionHeading

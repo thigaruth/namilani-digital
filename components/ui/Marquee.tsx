@@ -25,7 +25,7 @@ export function Marquee({
                 <span
                   className={cn(
                     "whitespace-nowrap px-5 text-[0.6875rem] font-bold uppercase tracking-[0.2em] sm:text-xs",
-                    tone === "dark" ? "text-white/55" : "text-muted",
+                    tone === "dark" ? "text-paper/50" : "text-muted",
                   )}
                 >
                   {item}

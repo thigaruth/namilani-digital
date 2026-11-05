@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedSection } from "@/components/animations/AnimatedSection";
-import { StaggerGroup, StaggerItem } from "@/components/animations/StaggerGroup";
 import { ContactCTA } from "@/components/home/ContactCTA";
+import { accentStyles } from "@/lib/accents";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createMetadata({
@@ -75,37 +75,35 @@ export default function AboutPage() {
         image="/hero/about-hero.jpg"
       >
         <div className="flex flex-wrap gap-2">
-          {["Build", "Grow", "Connect"].map((word, index) => (
+          {["Build", "Grow", "Connect"].map((word) => (
             <span
               key={word}
-              className="rounded-full border border-white/12 bg-white/5 px-3.5 py-1.5 text-[0.625rem] font-bold uppercase tracking-[0.16em] text-white/60"
+              className="border border-paper/25 px-3.5 py-1.5 text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-paper/70"
             >
-              <span className={index === 0 ? "text-coral" : index === 1 ? "text-white" : "text-teal"}>
-                {word}
-              </span>
+              {word}
             </span>
           ))}
         </div>
       </PageHero>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper py-20 md:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <AnimatedSection>
               <Eyebrow>Our story</Eyebrow>
-              <h2 className="mt-5 font-display text-[clamp(2.1rem,4.2vw,3.5rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-navy">
-                A Digital Partner for Businesses With Ambition.
+              <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.06] tracking-[-0.015em] text-forest">
+                A digital partner for businesses with <span className="italic text-coral-ink">ambition</span>.
               </h2>
-              <div className="mt-8 rounded-3xl border border-coral/25 bg-coral/10 p-6">
-                <p className="font-display text-lg font-bold leading-snug tracking-[-0.02em] text-navy">
+              <div className="mt-8 border-l-2 border-coral pl-5">
+                <p className="font-display text-lg font-medium italic leading-snug tracking-[-0.01em] text-forest">
                   Every business has something valuable to offer. The challenge is making sure the
                   right people discover it, understand it, and trust it.
                 </p>
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1}>
-              <div className="space-y-4 text-base leading-relaxed text-muted sm:text-lg">
+            <AnimatedSection delay={0.08}>
+              <div className="space-y-4 text-base leading-relaxed text-muted sm:text-[1.0625rem]">
                 <p>
                   Namilani Digital was built around this idea: businesses deserve digital solutions
                   that do more than simply look professional. They should help communicate value,
@@ -130,20 +128,19 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-mist py-20 md:py-28">
+      <section className="bg-paper-deep/50 py-20 md:py-28">
         <Container>
           <div className="grid gap-4 md:grid-cols-2">
             <AnimatedSection>
-              <div className="relative h-full overflow-hidden rounded-[2rem] bg-coral p-7 text-ink sm:p-9">
-                <div className="pointer-events-none absolute -right-10 -top-10 size-40 rounded-full bg-white/20 blur-2xl" aria-hidden="true" />
-                <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-ink/10">
+              <div className="h-full border-t-2 border-coral bg-coral p-7 text-ink sm:p-9">
+                <span className="inline-flex size-11 items-center justify-center border border-ink/20">
                   <Target className="size-5" aria-hidden="true" />
                 </span>
-                <p className="mt-8 text-[0.625rem] font-bold uppercase tracking-[0.2em] text-ink/55">
+                <p className="mt-8 text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-ink/55">
                   Our mission
                 </p>
-                <h2 className="mt-3 font-display text-2xl font-extrabold leading-tight tracking-[-0.035em] sm:text-3xl">
-                  Making Digital Opportunities More Accessible.
+                <h2 className="mt-3 font-display text-2xl font-semibold leading-tight tracking-[-0.01em] sm:text-3xl">
+                  Making digital opportunities more accessible.
                 </h2>
                 <p className="mt-4 max-w-md text-sm leading-relaxed text-ink/70">
                   Our mission is to empower businesses with practical, creative, and effective
@@ -153,19 +150,18 @@ export default function AboutPage() {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1}>
-              <div className="relative h-full overflow-hidden rounded-[2rem] bg-navy p-7 text-white sm:p-9">
-                <div className="pointer-events-none absolute -bottom-12 -right-8 size-44 rounded-full bg-teal/25 blur-3xl" aria-hidden="true" />
-                <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-white/10 text-teal">
+            <AnimatedSection delay={0.08}>
+              <div className="h-full border-t-2 border-teal bg-forest-deep p-7 text-paper sm:p-9">
+                <span className="inline-flex size-11 items-center justify-center border border-paper/20 text-teal">
                   <Rocket className="size-5" aria-hidden="true" />
                 </span>
-                <p className="mt-8 text-[0.625rem] font-bold uppercase tracking-[0.2em] text-white/40">
+                <p className="mt-8 text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-paper/40">
                   Our vision
                 </p>
-                <h2 className="mt-3 font-display text-2xl font-extrabold leading-tight tracking-[-0.035em] sm:text-3xl">
-                  A Future Where Every Business Can Compete Digitally.
+                <h2 className="mt-3 font-display text-2xl font-semibold leading-tight tracking-[-0.01em] sm:text-3xl">
+                  A future where every business can compete digitally.
                 </h2>
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">
+                <p className="mt-4 max-w-md text-sm leading-relaxed text-paper/60">
                   Our vision is to become a trusted digital partner for businesses seeking to build
                   credible brands, meaningful online experiences, and stronger connections with
                   their customers.
@@ -176,57 +172,48 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-paper py-20 md:py-28">
         <Container>
           <AnimatedSection>
             <SectionHeading
               eyebrow="What guides us"
-              title="Values That Shape the Work."
+              title="Values that shape the work."
               description="These principles keep our recommendations grounded in what is useful, honest, and relevant to your business."
             />
           </AnimatedSection>
 
-          <StaggerGroup className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value, index) => {
               const Icon = value.icon;
+              const styles = accentStyles[value.accent];
               return (
-                <StaggerItem key={value.title} className={index === 4 ? "lg:col-span-1" : undefined}>
-                  <div className="group h-full rounded-3xl border border-navy/8 bg-mist/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-soft sm:p-7">
-                    <div className="flex items-start justify-between">
-                      <span
-                        className={`inline-flex size-11 items-center justify-center rounded-2xl ${
-                          value.accent === "coral"
-                            ? "bg-coral/12 text-coral-ink"
-                            : value.accent === "teal"
-                              ? "bg-teal/12 text-teal-ink"
-                              : "bg-orange/12 text-orange-ink"
-                        }`}
-                      >
-                        <Icon className="size-5" strokeWidth={1.9} aria-hidden="true" />
-                      </span>
-                      <span className="font-display text-xs font-bold tracking-[0.16em] text-navy/20">
+                <AnimatedSection key={value.title} delay={index * 0.04}>
+                  <div className={`border-t-2 pt-5 ${styles.border}`}>
+                    <div className="flex items-center justify-between">
+                      <Icon className={`size-4 ${styles.text}`} strokeWidth={1.8} aria-hidden="true" />
+                      <span className="font-display text-sm text-muted/70">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="mt-5 font-display text-lg font-bold tracking-[-0.025em] text-navy">
+                    <h3 className="mt-4 font-display text-lg font-semibold tracking-[-0.01em] text-forest">
                       {value.title}
                     </h3>
-                    <p className="mt-2.5 text-sm leading-relaxed text-muted">{value.description}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{value.description}</p>
                   </div>
-                </StaggerItem>
+                </AnimatedSection>
               );
             })}
-          </StaggerGroup>
+          </div>
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-mist py-20 md:py-28">
+      <section className="relative overflow-hidden bg-paper-deep/50 py-20 md:py-28">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+          <div className="grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
             <AnimatedSection>
               <Eyebrow>Our approach</Eyebrow>
-              <h2 className="mt-5 font-display text-[clamp(2.1rem,4.2vw,3.5rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-navy">
-                We Start With Your Business, Not Just the Brief.
+              <h2 className="mt-5 font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.06] tracking-[-0.015em] text-forest">
+                We start with your business, not just the brief.
               </h2>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
                 Before recommending a website, marketing campaign, or design package, we want to
@@ -247,21 +234,18 @@ export default function AboutPage() {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.1}>
-              <div className="relative rounded-[2rem] border border-navy/8 bg-white p-7 shadow-soft sm:p-9">
-                <div className="pointer-events-none absolute -right-3 -top-3 size-16 rounded-full bg-coral/20 blur-xl" aria-hidden="true" />
-                <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-teal/12 text-teal-ink">
+            <AnimatedSection delay={0.08}>
+              <div className="border border-ink/12 bg-paper p-7 sm:p-9">
+                <span className="inline-flex size-12 items-center justify-center bg-teal/10 text-teal-ink">
                   <Eye className="size-5" aria-hidden="true" />
                 </span>
-                <h3 className="mt-6 font-display text-xl font-bold tracking-[-0.03em] text-navy">
+                <h3 className="mt-6 font-display text-xl font-semibold tracking-[-0.01em] text-forest">
                   Before we recommend anything, we consider:
                 </h3>
-                <ul className="mt-5 space-y-3">
+                <ul className="mt-5 space-y-0">
                   {approachPoints.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                      <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-teal/12 text-teal-ink">
-                        <span className="size-1.5 rounded-full bg-teal" aria-hidden="true" />
-                      </span>
+                    <li key={point} className="flex items-start gap-3 border-b border-ink/10 py-3 text-sm leading-relaxed text-muted last:border-b-0">
+                      <span className="mt-2 size-1.5 shrink-0 bg-teal" aria-hidden="true" />
                       {point}
                     </li>
                   ))}

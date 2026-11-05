@@ -32,8 +32,8 @@ export function SectionHeading({
       {eyebrow ? <Eyebrow tone={tone}>{eyebrow}</Eyebrow> : null}
       <h2
         className={cn(
-          "max-w-3xl font-display text-[clamp(2rem,4.4vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.04em]",
-          tone === "dark" ? "text-white" : "text-navy",
+          "max-w-3xl font-display text-[clamp(1.95rem,4vw,3.15rem)] font-semibold leading-[1.08] tracking-[-0.015em]",
+          tone === "dark" ? "text-paper" : "text-forest",
           titleClassName,
         )}
       >
@@ -42,8 +42,8 @@ export function SectionHeading({
       {description ? (
         <div
           className={cn(
-            "max-w-2xl text-base leading-relaxed sm:text-lg",
-            tone === "dark" ? "text-white/65" : "text-muted",
+            "max-w-2xl text-base leading-relaxed sm:text-[1.0625rem]",
+            tone === "dark" ? "text-paper/60" : "text-muted",
           )}
         >
           {description}

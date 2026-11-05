@@ -79,18 +79,18 @@ export default async function ProjectPage({
         </div>
       </PageHero>
 
-      <section className="bg-white pb-20 pt-10 md:pb-28">
+      <section className="bg-paper pb-20 pt-10 md:pb-28">
         <Container>
           <AnimatedSection>
-            <div className="-mt-20 overflow-hidden rounded-[2rem] border-8 border-white shadow-lift sm:-mt-24 md:rounded-[2.5rem]">
+            <div className="-mt-16 border border-ink/12 bg-paper p-2 sm:-mt-20">
               <ProjectVisual project={project} large />
             </div>
           </AnimatedSection>
 
-          <div className="mt-8 flex items-start gap-3 rounded-2xl border border-orange/25 bg-orange/8 p-4 text-xs leading-relaxed text-navy/70">
+          <div className="mt-8 flex items-start gap-3 border-l-2 border-orange/60 bg-paper-deep/40 p-4 text-xs leading-relaxed text-forest/70">
             <Info className="mt-0.5 size-4 shrink-0 text-orange-ink" aria-hidden="true" />
             <p>
-              This is a placeholder project profile. Verified project details, screenshots, client
+              This is a preview project profile. Verified project details, screenshots, client
               approval, and outcome information have not yet been supplied. Nothing on this page
               should be interpreted as a confirmed project result.
             </p>
@@ -99,8 +99,8 @@ export default async function ProjectPage({
           <div className="mt-12 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <AnimatedSection>
               <Eyebrow>Project overview</Eyebrow>
-              <h2 className="mt-4 font-display text-3xl font-extrabold tracking-[-0.04em] text-navy">
-                The Details
+              <h2 className="mt-4 font-display text-3xl font-semibold tracking-[-0.01em] text-forest">
+                The details
               </h2>
               <dl className="mt-7 space-y-0">
                 {[
@@ -110,18 +110,18 @@ export default async function ProjectPage({
                   { label: "Services provided", value: project.servicesProvided },
                   { label: "Status", value: "Preview — details pending verification" },
                 ].map((item) => (
-                  <div key={item.label} className="border-b border-navy/8 py-4">
-                    <dt className="text-[0.625rem] font-bold uppercase tracking-[0.16em] text-muted">
+                  <div key={item.label} className="border-b border-ink/10 py-4">
+                    <dt className="text-[0.5625rem] font-semibold uppercase tracking-[0.18em] text-muted">
                       {item.label}
                     </dt>
-                    <dd className="mt-1.5 text-sm font-semibold text-navy">{item.value}</dd>
+                    <dd className="mt-1.5 text-sm font-medium text-forest">{item.value}</dd>
                   </div>
                 ))}
                 <div className="py-4">
-                  <dt className="text-[0.625rem] font-bold uppercase tracking-[0.16em] text-muted">
+                  <dt className="text-[0.5625rem] font-semibold uppercase tracking-[0.18em] text-muted">
                     Live project
                   </dt>
-                  <dd className="mt-1.5 text-sm font-semibold text-navy">
+                  <dd className="mt-1.5 text-sm font-medium text-forest">
                     {project.liveUrl ? (
                       <a
                         href={project.liveUrl}
@@ -154,15 +154,15 @@ export default async function ProjectPage({
                 </p>
               </AnimatedSection>
 
-              <div className="mt-8 border-t border-navy/8">
+              <div className="mt-8 border-t border-ink/12">
                 {caseSections.map((section) => (
                   <AnimatedSection key={section.key}>
-                    <div className="grid gap-4 border-b border-navy/8 py-7 sm:grid-cols-[3rem_1fr]">
-                      <span className="font-display text-xs font-bold tracking-[0.16em] text-navy/25">
+                    <div className="grid gap-4 border-b border-ink/12 py-7 sm:grid-cols-[3rem_1fr]">
+                      <span className="font-display text-sm text-muted/70">
                         {section.number}
                       </span>
                       <div>
-                        <h3 className="font-display text-xl font-bold tracking-[-0.03em] text-navy">
+                        <h3 className="font-display text-xl font-semibold tracking-[-0.01em] text-forest">
                           {section.label}
                         </h3>
                         <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -178,25 +178,25 @@ export default async function ProjectPage({
         </Container>
       </section>
 
-      <section className="bg-mist py-16 md:py-20">
+      <section className="bg-paper-deep/50 py-16 md:py-20">
         <Container>
           <AnimatedSection>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <Eyebrow>More work</Eyebrow>
-                <h2 className="mt-4 font-display text-2xl font-extrabold tracking-[-0.035em] text-navy sm:text-3xl">
+                <h2 className="mt-4 font-display text-2xl font-semibold tracking-[-0.01em] text-forest sm:text-3xl">
                   Continue exploring.
                 </h2>
               </div>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.13em] text-navy/60 transition-colors hover:text-navy"
+                className="inline-flex items-center gap-2 text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-forest/60 transition-colors hover:text-forest"
               >
                 View all projects <ArrowUpRight className="size-3.5" aria-hidden="true" />
               </Link>
             </div>
           </AnimatedSection>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-x-5 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => (
               <PortfolioCard key={item.slug} project={item} />
             ))}

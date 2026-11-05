@@ -73,7 +73,7 @@ export function MobileMenu({
         >
           <button
             type="button"
-            className="absolute inset-0 bg-navy-deep/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-forest-deep/70"
             aria-label="Close menu"
             onClick={onClose}
             tabIndex={-1}
@@ -83,24 +83,27 @@ export function MobileMenu({
             role="dialog"
             aria-modal="true"
             aria-label="Site menu"
-            className="absolute inset-y-0 right-0 flex h-full w-full max-w-md flex-col overflow-y-auto bg-navy-deep text-white shadow-2xl"
+            className="absolute inset-y-0 right-0 flex h-full w-full max-w-md flex-col overflow-y-auto bg-forest-deep text-paper"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-40" aria-hidden="true" />
-            <div className="pointer-events-none absolute -right-24 top-0 size-72 rounded-full bg-coral/20 blur-[100px]" aria-hidden="true" />
-            <div className="pointer-events-none absolute -bottom-24 -left-16 size-72 rounded-full bg-teal/15 blur-[100px]" aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-0 bg-grain opacity-[0.06]" aria-hidden="true" />
 
-            <div className="relative flex items-center justify-between border-b border-white/10 px-5 py-4">
-              <Link href="/" onClick={onClose} aria-label="Namilani Digital home">
+            <div className="relative flex items-center justify-between border-b border-paper/12 px-5 py-4">
+              <Link
+                href="/"
+                onClick={onClose}
+                aria-label="Namilani Digital home"
+                className="bg-paper p-1.5"
+              >
                 <Logo size="sm" />
               </Link>
               <button
                 type="button"
                 onClick={onClose}
-                className="inline-flex size-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition hover:border-white/40 hover:text-white"
+                className="inline-flex size-11 items-center justify-center border border-paper/20 text-paper/80 transition hover:border-paper/50 hover:text-paper"
                 aria-label="Close menu"
               >
                 <X className="size-5" aria-hidden="true" />
@@ -122,32 +125,31 @@ export function MobileMenu({
                           onClick={onClose}
                           aria-current={active ? "page" : undefined}
                           className={cn(
-                            "flex flex-1 items-center py-3 font-display text-2xl font-bold tracking-[-0.03em] transition-colors",
-                            active ? "text-white" : "text-white/65 hover:text-white",
+                            "flex flex-1 items-center border-b border-paper/10 py-3 font-display text-3xl font-semibold tracking-[-0.015em] transition-colors",
+                            active ? "text-paper" : "text-paper/60 hover:text-paper",
                           )}
                         >
                           {item.label}
                           {active ? (
-                            <span className="ml-3 size-1.5 rounded-full bg-coral" aria-hidden="true" />
+                            <span className="ml-3 size-1.5 bg-coral" aria-hidden="true" />
                           ) : null}
                         </Link>
                       </div>
 
                       {children ? (
-                        <ul className="mb-2 ml-3 space-y-0.5 border-l border-white/10 pl-4">
+                        <ul className="mb-2 ml-1 border-l border-paper/15 pl-4">
                           {children.map((child) => (
                             <li key={child.href}>
                               <Link
                                 href={child.href}
                                 onClick={onClose}
                                 className={cn(
-                                  "flex items-center gap-2 py-2 text-sm transition-colors",
+                                  "flex items-center py-2 text-sm transition-colors",
                                   pathname === child.href
-                                    ? "text-teal"
-                                    : "text-white/50 hover:text-white/85",
+                                    ? "text-coral"
+                                    : "text-paper/45 hover:text-paper/85",
                                 )}
                               >
-                                <span className="size-1 rounded-full bg-current" aria-hidden="true" />
                                 {child.label}
                               </Link>
                             </li>
@@ -165,31 +167,31 @@ export function MobileMenu({
                 </Button>
               </div>
 
-              <div className="mt-8 border-t border-white/10 pt-6">
-                <p className="mb-3 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-white/40">
+              <div className="mt-8 border-t border-paper/12 pt-6">
+                <p className="mb-3 text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-paper/40">
                   Talk to us
                 </p>
                 <SiteContact variant="mobile" onNavigate={onClose} />
               </div>
             </nav>
 
-            <div className="relative border-t border-white/10 px-5 py-5 text-xs text-white/40">
+            <div className="relative border-t border-paper/12 px-5 py-5 text-xs text-paper/40">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <a href={mailtoHref} className="inline-flex items-center gap-1.5 hover:text-white">
+                <a href={mailtoHref} className="inline-flex items-center gap-1.5 hover:text-paper">
                   <Mail className="size-3.5" aria-hidden="true" /> Email
                 </a>
-                <a href={telHref} className="inline-flex items-center gap-1.5 hover:text-white">
+                <a href={telHref} className="inline-flex items-center gap-1.5 hover:text-paper">
                   <Phone className="size-3.5" aria-hidden="true" /> Call
                 </a>
                 <a
                   href={whatsappMessageHref()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-white"
+                  className="inline-flex items-center gap-1.5 hover:text-paper"
                 >
                   <MessageCircle className="size-3.5" aria-hidden="true" /> WhatsApp
                 </a>
-                <Link href="/portfolio" onClick={onClose} className="inline-flex items-center gap-1 hover:text-white">
+                <Link href="/portfolio" onClick={onClose} className="inline-flex items-center gap-1 hover:text-paper">
                   Our Work <ArrowUpRight className="size-3" aria-hidden="true" />
                 </Link>
               </div>

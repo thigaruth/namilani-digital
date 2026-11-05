@@ -39,22 +39,48 @@ export function SiteContact({
     },
   ];
 
+  const isMobile = variant === "mobile";
+
   return (
-    <ul className={cn("grid gap-3", variant === "mobile" ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2")}>
+    <ul className={cn("grid gap-2", isMobile ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2")}>
       {items.map((item) => {
         const Icon = item.icon;
         const content = (
           <>
-            <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl bg-navy/6 text-navy">
+            <span
+              className={cn(
+                "inline-flex size-9 shrink-0 items-center justify-center",
+                isMobile ? "bg-paper/10 text-paper" : "bg-ink/5 text-forest",
+              )}
+            >
               <Icon className="size-4" aria-hidden="true" />
             </span>
             <span className="min-w-0">
-              <span className="block text-[0.625rem] font-bold uppercase tracking-[0.16em] text-muted">
+              <span
+                className={cn(
+                  "block text-[0.5625rem] font-semibold uppercase tracking-[0.18em]",
+                  isMobile ? "text-paper/40" : "text-muted",
+                )}
+              >
                 {item.label}
               </span>
-              <span className="block break-words text-sm font-semibold text-navy">{item.value}</span>
+              <span
+                className={cn(
+                  "block break-words text-sm font-medium",
+                  isMobile ? "text-paper" : "text-forest",
+                )}
+              >
+                {item.value}
+              </span>
             </span>
           </>
+        );
+
+        const shell = cn(
+          "flex items-center gap-3 border p-3 transition-colors",
+          isMobile
+            ? "border-paper/12 hover:border-paper/30"
+            : "border-ink/10 bg-paper-deep/30 hover:border-teal/40",
         );
 
         return (
@@ -65,19 +91,12 @@ export function SiteContact({
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
                 onClick={onNavigate}
-                className={cn(
-                  "flex items-center gap-3 rounded-2xl border border-navy/8 bg-white p-3 transition-colors",
-                  variant === "mobile"
-                    ? "hover:border-white/30 hover:bg-white/5"
-                    : "hover:border-teal/40 hover:bg-teal/5",
-                )}
+                className={shell}
               >
                 {content}
               </a>
             ) : (
-              <div className="flex items-center gap-3 rounded-2xl border border-navy/8 bg-white p-3">
-                {content}
-              </div>
+              <div className={shell}>{content}</div>
             )}
           </li>
         );

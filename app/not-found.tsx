@@ -20,22 +20,20 @@ const links = [
 
 export default function NotFound() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep pb-20 pt-32 text-white md:pb-28 md:pt-40">
-      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-40" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-24 top-16 size-96 rounded-full bg-coral/20 blur-[110px]" aria-hidden="true" />
-      <div className="pointer-events-none absolute -left-24 bottom-0 size-96 rounded-full bg-teal/15 blur-[110px]" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-forest-deep pb-20 pt-32 text-paper md:pb-28 md:pt-40">
+      <div className="pointer-events-none absolute inset-0 bg-grain opacity-[0.06]" aria-hidden="true" />
 
       <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <Eyebrow tone="dark">404 — Page not found</Eyebrow>
-            <p className="mt-6 font-display text-[clamp(5rem,16vw,11rem)] font-extrabold leading-[0.8] tracking-[-0.07em] text-white/10">
+            <p className="mt-6 font-display text-[clamp(5rem,16vw,11rem)] font-semibold leading-[0.8] tracking-[-0.04em] text-paper/10">
               404
             </p>
-            <h1 className="-mt-4 font-display text-[clamp(2.3rem,5.5vw,4.3rem)] font-extrabold leading-[1.02] tracking-[-0.05em]">
-              This page took a <span className="text-coral">different path.</span>
+            <h1 className="-mt-2 font-display text-[clamp(2.3rem,5.5vw,4.3rem)] font-semibold leading-[1.02] tracking-[-0.02em]">
+              This page took a <span className="italic text-coral">different path.</span>
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-white/55">
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-paper/55">
               The page you were looking for may have moved, changed, or never existed. Let&apos;s get
               you back to somewhere useful.
             </p>
@@ -50,8 +48,8 @@ export default function NotFound() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm sm:p-6">
-            <p className="px-2 text-[0.625rem] font-bold uppercase tracking-[0.18em] text-white/40">
+          <div className="border border-paper/15 p-4 sm:p-6">
+            <p className="px-2 text-[0.5625rem] font-semibold uppercase tracking-[0.2em] text-paper/40">
               Popular destinations
             </p>
             <ul className="mt-3">
@@ -59,15 +57,15 @@ export default function NotFound() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group flex items-center justify-between gap-4 rounded-2xl px-3 py-3.5 transition-colors hover:bg-white/5"
+                    className="group flex items-center justify-between gap-4 border-b border-paper/10 px-2 py-3.5 transition-colors last:border-b-0 hover:bg-paper/5"
                   >
                     <span>
-                      <span className="block text-sm font-semibold text-white/80 group-hover:text-white">
+                      <span className="block text-sm font-semibold text-paper/80 group-hover:text-paper">
                         {link.label}
                       </span>
-                      <span className="block text-xs text-white/35">{link.description}</span>
+                      <span className="block text-xs text-paper/35">{link.description}</span>
                     </span>
-                    <ArrowUpRight className="size-4 text-white/25 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-teal" aria-hidden="true" />
+                    <ArrowUpRight className="size-4 text-paper/25 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-teal" aria-hidden="true" />
                   </Link>
                 </li>
               ))}

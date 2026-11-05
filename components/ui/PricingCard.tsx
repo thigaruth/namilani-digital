@@ -1,7 +1,11 @@
-import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { accentStyles } from "@/lib/accents";
 import type { ServiceAccent } from "@/lib/services";
+
+const accentRule: Record<ServiceAccent, string> = {
+  coral: "border-t-coral",
+  teal: "border-t-teal",
+  orange: "border-t-orange",
+};
 
 export function PricingCard({
   label,
@@ -18,24 +22,25 @@ export function PricingCard({
   featured?: boolean;
   className?: string;
 }) {
-  const styles = accentStyles[accent];
-
   return (
     <div
       className={cn(
-        "relative flex h-full flex-col rounded-3xl border bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7",
-        featured ? "border-navy/15 shadow-soft" : "border-navy/8",
+        "flex h-full flex-col border-t-2 bg-paper-deep/40 p-6 transition-colors duration-200 hover:bg-sand/50 sm:p-7",
+        accentRule[accent],
         className,
       )}
     >
-      <span
-        className={cn("mb-5 inline-flex size-10 items-center justify-center rounded-xl", styles.soft, styles.text)}
-        aria-hidden="true"
-      >
-        <Check className="size-5" strokeWidth={2.4} />
-      </span>
-      <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{label}</p>
-      <p className="mt-2 font-display text-2xl font-extrabold tracking-[-0.03em] text-navy sm:text-[1.7rem]">
+      <div className="flex items-baseline justify-between gap-3">
+        <p className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-muted">
+          {label}
+        </p>
+        {featured ? (
+          <span className="text-[0.5625rem] font-semibold uppercase tracking-[0.18em] text-coral-ink">
+            Popular
+          </span>
+        ) : null}
+      </div>
+      <p className="mt-4 font-display text-[1.7rem] font-semibold leading-tight tracking-[-0.02em] text-forest sm:text-3xl">
         {price}
       </p>
       {note ? <p className="mt-3 text-sm leading-relaxed text-muted">{note}</p> : null}
