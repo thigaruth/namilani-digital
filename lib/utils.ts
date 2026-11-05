@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getSiteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || "https://namilanidigital.com").replace(/\/$/, "");
+  return (process.env.NEXT_PUBLIC_SITE_URL || "https://namilani.com").replace(/\/$/, "");
 }
 
 export function absoluteUrl(path = "/") {

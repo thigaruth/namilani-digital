@@ -165,7 +165,7 @@ export function ContactForm() {
           <p className="mt-2 pl-6 text-forest/60">
             You can also email{" "}
             <a href={mailtoHref} className="font-semibold text-teal-ink underline underline-offset-2">
-              info@namilanidigital.com
+              info@namilani.com
             </a>{" "}
             or{" "}
             <a

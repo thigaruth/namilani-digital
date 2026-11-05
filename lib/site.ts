@@ -5,8 +5,8 @@ export const site = {
     "Namilani Digital helps businesses build a stronger digital presence through creative design, website development, SEO, and digital marketing solutions.",
   shortDescription:
     "Digital solutions for businesses ready to build, grow and connect.",
-  url: "https://namilanidigital.com",
-  email: "info@namilanidigital.com",
+  url: "https://namilani.com",
+  email: "info@namilani.com",
   phoneDisplay: "0796439179",
   phoneLocal: "0796439179",
   phoneInternational: "+254796439179",

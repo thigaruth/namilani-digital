@@ -13,7 +13,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createMetadata({
   title: "Contact Namilani Digital | Start Your Project",
   description:
-    "Contact Namilani Digital to discuss a website, SEO, social media, graphic design, or hosting project. Email info@namilanidigital.com or message us on WhatsApp.",
+    "Contact Namilani Digital to discuss a website, SEO, social media, graphic design, or hosting project. Email info@namilani.com or message us on WhatsApp.",
   path: "/contact",
   keywords: ["contact Namilani Digital", "web design enquiry Kenya", "digital agency contact Kenya"],
 });

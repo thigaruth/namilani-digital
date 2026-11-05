@@ -46,9 +46,9 @@ Copy `.env.example` to `.env.local`. Never commit `.env.local`.
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Production | Canonical site URL used by metadata, sitemap, robots, and Open Graph. |
-| `CONTACT_EMAIL` | Recommended | Inbox that receives enquiry emails. Defaults to `info@namilanidigital.com`. |
+| `CONTACT_EMAIL` | Recommended | Inbox that receives enquiry emails. Defaults to `info@namilani.com`. |
 | `RESEND_API_KEY` | For email | Resend API key. Without it the form returns an honest unconfigured message. |
-| `CONTACT_FROM_EMAIL` | For email | Verified Resend sender, e.g. `Namilani Digital <website@namilanidigital.com>`. |
+| `CONTACT_FROM_EMAIL` | For email | Verified Resend sender, e.g. `Namilani Digital <website@namilani.com>`. |
 | `NEXT_PUBLIC_FACEBOOK_URL` | Optional | Shows the footer social link when set. |
 | `NEXT_PUBLIC_INSTAGRAM_URL` | Optional | Shows the footer social link when set. |
 | `NEXT_PUBLIC_LINKEDIN_URL` | Optional | Shows the footer social link when set. |
@@ -58,7 +58,7 @@ Copy `.env.example` to `.env.local`. Never commit `.env.local`.
 ### Contact form email setup
 
 1. Create a [Resend](https://resend.com) account and API key.
-2. Verify the sending domain (`namilanidigital.com`) in Resend.
+2. Verify the sending domain (`namilani.com`) in Resend.
 3. Set `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` in the deployment environment.
 4. Set `CONTACT_EMAIL` to the inbox that should receive enquiries.
 5. Submit a test enquiry from the deployed site.
@@ -128,8 +128,8 @@ The project is ready for Vercel:
 1. Import the repository into Vercel.
 2. Add the environment variables listed above.
 3. Deploy.
-4. Point the `namilanidigital.com` domain at the project and verify HTTPS.
-5. Submit `https://namilanidigital.com/sitemap.xml` in Google Search Console.
+4. Point the `namilani.com` domain at the project and verify HTTPS.
+5. Submit `https://namilani.com/sitemap.xml` in Google Search Console.
 
 Run `npm run lint`, `npm run typecheck`, and `npm run build` before deploying changes.
 

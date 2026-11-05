@@ -112,7 +112,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         message:
-          "The online enquiry form is not connected to an email service yet. Please email info@namilanidigital.com or message us on WhatsApp.",
+          "The online enquiry form is not connected to an email service yet. Please email info@namilani.com or message us on WhatsApp.",
       },
       { status: 503 },
     );
